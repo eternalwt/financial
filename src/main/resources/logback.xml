@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="false" scanPeriod="120 seconds" debug="false">
+
+  <include resource="org/springframework/boot/logging/logback/base.xml"/>
+  <property name="LOG_PATH" value="logback" />
+
+  <!-- console output -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!--encoder 默认配置为PatternLayoutEncoder-->
+    <encoder>
+      <pattern>===%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger Line:%-3L - %msg%n</pattern>
+      <charset>utf-8</charset>
+    </encoder>
+    <!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>INFO</level>
+    </filter>
+  </appender>
+
+  <!-- Simple file output -->
+  <appender name="base_log" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <!-- encoder defaults to ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+    <encoder>
+      <pattern>
+        [ %-5level] [%date{yyyy-MM-dd HH:mm:ss}] [%thread] %logger{96} [%line] - %msg%n
+      </pattern>
+      <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+    </encoder>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- rollover daily 配置日志所生成的目录以及生成文件名的规则 -->
+      <fileNamePattern>${LOG_PATH}/log-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <timeBasedFileNamingAndTriggeringPolicy
+              class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <!-- or whenever the file size reaches 64 MB -->
+        <maxFileSize>64 MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>INFO</level>
+    </filter>
+    <!-- 追加方式记录日志 -->
+    <append>true</append>
+    <!-- Safely log to the same file from multiple JVMs. Degrades performance! -->
+    <prudent>true</prudent>
+  </appender>
+
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="base_log" />
+  </root>
+
+  <logger name="com.hulk.financial" level="INFO" additivity="false">
+    <appender-ref ref="base_log"/>
+    <appender-ref ref="STDOUT" />
+  </logger>
+
+</configuration>
