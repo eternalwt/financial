@@ -31,6 +31,9 @@ repositories {
 
 ext {
 	mybatisVer = '1.3.1'
+	lombokVer = '1.16.20'
+	swagger2Ver = '2.8.0'
+	mysqlConVer = '6.0.6'
 }
 
 dependencies {
@@ -38,10 +41,13 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 
 	// mybatis
+	compile("mysql:mysql-connector-java:$mysqlConVer")
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisVer")
+	
+	compile("org.projectlombok:lombok:$lombokVer")
 
-	compile('io.springfox:springfox-swagger2:2.8.0')
-	compile('io.springfox:springfox-swagger-ui:2.8.0')
+	compile("io.springfox:springfox-swagger2:$swagger2Ver")
+	compile("io.springfox:springfox-swagger-ui:$swagger2Ver")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

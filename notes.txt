@@ -1,0 +1,43 @@
+
+lombok分为IDE插件和lombok包本身
+lombok有2个注解和Effective Java的条目有关（全面看一遍）：@EqualsAndHashCode、@ToString：https://www.jianshu.com/p/365ea41b3573
+
+Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
+
+
+把switch操作放入enum中，体现了良好的细节操作的封装性。enum的实现原理（从原理上把“用enum代替int常量”这一条解释通）：
+http://blog.csdn.net/huzhigenlaohu/article/details/51524129
+http://blog.csdn.net/mhmyqn/article/details/48087247
+
+java进阶：http://www.jasongj.com/tags/Java/
+
+深入理解 Java 内存模型：
+http://wiki.jikexueyuan.com/project/java-memory-model/
+
+1小时tensorflow
+
+基于 ZooKeeper 的分布式锁和队列：http://www.importnew.com/27019.html
+基于 redis 的分布式锁和队列
+基于redis实现分布式锁：
+http://blog.csdn.net/ugg/article/details/41894947
+http://www.cnblogs.com/wuhuajun/p/5242644.html
+http://blog.csdn.net/u010359884/article/details/50310387
+http://www.cnblogs.com/0201zcr/p/5942748.html
+
+Zookeeper的一致性协议：Zab：
+http://blog.csdn.net/chen77716/article/details/7309915
+http://www.cnblogs.com/shangxiaofei/p/5209440.html
+http://blog.jobbole.com/104985/
+
+1.mybatis generator，继续搭环境和shiro；
+2.tf 1小时教程(看我的docker装好了没)；
+2.面试题：https://www.cnblogs.com/w1570631036/p/8549333.html；
+swagger2和mybatis generator要用好。swagger2在微服务下怎么搞
+0.DI；
+1.dubbo的协议（跟spring cloud比的优势）；
+2.java进阶；
+3.mysql数据库集群的场景；
+4.java的RPC再看；
+5.cnblogs的一个java博客
+6.mybatis二级缓存
+
