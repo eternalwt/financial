@@ -1,14 +1,22 @@
 
 //TODO：
-1.注解的方式使用mybatis；
-2.mybatis generator
+0.springboot 2.0自带的flyway用起来（在用的过程中摸索）；
+1.注解的方式使用mybatis（先把几种方式都搞清楚），出错处理要重点关注；
+2.mybatis generator（等gradle版的，先放到2018.06。其实也可以建立一个maven子项目专门用来处理代码生成）；
+3.Shiro继续，或者spring security（结合springboot 2.0），在入职前要熟练；
+4.lombok要很熟练（源码级别）；
+如何配置JUnit 5？（现在是4.12）
 
 lombok分为IDE插件和lombok包本身
 lombok有2个注解和Effective Java的条目有关（全面看一遍）：@EqualsAndHashCode、@ToString：https://www.jianshu.com/p/365ea41b3573
 
 Loading class `com.mysql.jdbc.Driver'. This is deprecated. The new driver class is `com.mysql.cj.jdbc.Driver'. The driver is automatically registered via the SPI and manual loading of the driver class is generally unnecessary.
 
-切换DataSource的原理是啥？
+切换DataSource的原理是啥？JdbcTemplate和mybatis如何切换DataSource？
+
+mavenrepository里面的dubbo组件：http://mvnrepository.com/search?q=dubbo
+
+提升搜索效率的搜索技巧：IDE name(IntelliJ) + build tool(gradle) + content(Mybatis Generator)，必要的时候还要加上框架名称，例如springboot（不过这个应该是次要的，注意判断）
 
 把switch操作放入enum中，体现了良好的细节操作的封装性。enum的实现原理（从原理上把“用enum代替int常量”这一条解释通）：
 http://blog.csdn.net/huzhigenlaohu/article/details/51524129
@@ -18,6 +26,19 @@ java进阶：http://www.jasongj.com/tags/Java/
 
 深入理解 Java 内存模型：
 http://wiki.jikexueyuan.com/project/java-memory-model/
+
+毕啸南专访王坚：城市大脑将成为未来城市新基础设施：https://v.qq.com/x/cover/g1aaprd9302uf5n/u0604fqzphg.html
+中国人工智能之路：https://v.qq.com/detail/g/g1aaprd9302uf5n.html
+
+【重磅】Spring Boot 2.0权威发布：
+https://www.cnblogs.com/ityouknow/p/8492422.html
+http://blog.csdn.net/GitChat/article/details/78454120
+http://blog.csdn.net/freexyxyz/article/details/79003438
+db方面，默认引入了HikariCP，替代了之前的tomcat-pool作为底层的数据库连接池， 对比于tomcat-pool， HikariCP是一个高性能的JDBC连接池。Hikari是日语“光”的意思。可能是目前java业界最快的数据库连接池。
+Redis方面， 默认引入了Lettuce, 替代了之前的jedis作为底层的redis链接方式。Lettuce是一个可伸缩的线程安全的Redis客户端，用于同步，异步和反应使用。 多个线程可以共享同一个RedisConnection。它利用优秀netty NIO框架来高效地管理多个连接。 支持先进的Redis功能，如Sentinel，集群，流水线，自动重新连接和Redis数据模型。
+Flyway是独立于数据库的应用、管理并跟踪数据库变更的数据库版本管理工具。用通俗的话讲，Flyway可以像SVN管理不同人的代码那样，管理不同人的sql脚本，从而做到数据库同步：
+https://blog.waterstrong.me/flyway-in-practice/
+http://hao.jobbole.com/flyway/
 
 1小时tensorflow
 
@@ -45,4 +66,7 @@ swagger2和mybatis generator要用好。swagger2在微服务下怎么搞
 4.java的RPC再看；
 5.cnblogs的一个java博客
 6.mybatis二级缓存
+
+理解mysql索引背后的数据结构B~Tree(B-Tree/B+Tree)：http://blog.csdn.net/travellersy/article/details/78721435
+
 
