@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface GlobalmacroMapper {
 
-    @Select("select * from globalmacro where value = #{value}")
+    @Select("select * from help_keyword where name = #{value}")
     Globalmacro findUserByValue(@Param("value")String value);
 
 }

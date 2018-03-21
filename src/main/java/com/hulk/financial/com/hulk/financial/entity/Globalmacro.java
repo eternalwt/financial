@@ -1,21 +1,15 @@
 package com.hulk.financial.com.hulk.financial.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Created by HulkGao on 2018/3/15 0015.
  */
-//@Data
-@Setter
-@Getter
+@Data
 public class Globalmacro {
 
-    private int id;
+    private int help_keyword_id;
 
-    private String macro;
-
-    private String value;
+    private String name;
 
 }

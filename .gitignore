@@ -1,5 +1,6 @@
 .gradle
 /build/
+/bin/
 /logback/
 !gradle/wrapper/gradle-wrapper.jar
 

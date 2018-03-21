@@ -14,12 +14,12 @@ buildscript {
 }
 
 apply plugin: 'java'
-apply plugin: 'idea'//eclipse
+apply plugin: 'eclipse'//idea
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'com.hulk'
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0-SNAPSHOT'//TODO 去掉snapshot
 sourceCompatibility = 1.8
 
 repositories {
@@ -34,11 +34,13 @@ ext {
 	lombokVer = '1.16.20'
 	swagger2Ver = '2.8.0'
 	mysqlConVer = '6.0.6'
+	flywayVer = '5.0.7'
 }
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-security')
 
 	// mybatis
 	compile("mysql:mysql-connector-java:$mysqlConVer")
@@ -46,6 +48,7 @@ dependencies {
 	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisVer")
 	
 	compile("org.projectlombok:lombok:$lombokVer")
+	compile("org.flywaydb:flyway-core:$flywayVer")
 	compile('org.mybatis.generator:mybatis-generator-core:1.3.6')//TODO
 
 	compile("io.springfox:springfox-swagger2:$swagger2Ver")

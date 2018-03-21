@@ -24,7 +24,7 @@ public class TestController {
     @Autowired
     GlobalmacroMapper globalmacroMapper;
 
-    @ApiOperation(value="测试swagger2", notes="swagger2的第一段代码")
+    @ApiOperation(value="测试swagger2", notes="swagger2的第一个例子")
     @RequestMapping(value = "hello", method = RequestMethod.GET)
     @ResponseBody
     public String sayHello() {
@@ -35,9 +35,9 @@ public class TestController {
     @RequestMapping("getmacro")
     @ResponseBody
     public String getGlobalmacro() {
-        Globalmacro globalmacro = globalmacroMapper.findUserByValue("public");
+        Globalmacro globalmacro = globalmacroMapper.findUserByValue("(JSON");
         if (globalmacro != null) {
-            return globalmacro.getValue();
+            return globalmacro.getName();
         }
 
         return "";
